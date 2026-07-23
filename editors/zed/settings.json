@@ -1,0 +1,143 @@
+{
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "gpt-5.6-sol",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "base_keymap": "VSCode",
+  "restore_on_startup": "last_session",
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "selections_menu": true,
+    "agent_review": true
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 320,
+    "hide_root": false,
+    "auto_fold_dirs": false,
+    "starts_open": true,
+    "git_status": true,
+    "sticky_scroll": false,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "terminal": {
+    "font_size": 14.0,
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "cursor_shape": "bar"
+  },
+  "mouse_wheel_zoom": true,
+  "minimap": {
+    "show": "always"
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_size": 14.0,
+  "ui_font_size": 16,
+  "colorize_brackets": true,
+  "auto_indent_on_paste": true,
+  "linked_edits": true,
+  "show_whitespaces": "selection",
+  "show_edit_predictions": true,
+  "wrap_guides": [
+    88
+  ],
+  "icon_theme": "Light Charmed Icons",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "preferred_line_length": 88,
+      "wrap_guides": [
+        88
+      ],
+      "language_servers": [
+        "basedpyright",
+        "ruff"
+      ],
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true
+      },
+      "format_on_save": "on"
+    }
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticMode": "openFilesOnly",
+          "typeCheckingMode": "off",
+          "inlayHints": {
+            "callArgumentNames": false,
+            "functionReturnTypes": false,
+            "variableTypes": false
+          }
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "exclude": [
+            "*"
+          ]
+        }
+      }
+    }
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": true,
+    "show_user_menu": false
+  },
+  "outline_panel": {
+    "default_width": 300
+  },
+  "file_finder": {
+    "modal_max_width": "large"
+  },
+  "indent_guides": {
+    "enabled": true
+  },
+  "cursor_shape": "bar",
+  "cursor_blink": false,
+  "centered_layout": {
+    "right_padding": 0.15,
+    "left_padding": 0.15
+  }
+}

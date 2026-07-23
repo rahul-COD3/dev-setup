@@ -1,0 +1,1 @@
+# Export with: code --list-extensions > editors/vscode/extensions.txt

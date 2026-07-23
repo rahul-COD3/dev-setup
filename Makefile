@@ -1,23 +1,23 @@
 # ─────────────────────────────────────────────────────────────────────
-#  Docker database services — manager
+#  Docker database services - manager
 #
 #  Add a database:
-#    1. Add a service block in database/docker-compose.yml
-#    2. Map its short name below (in the "short name → service" section)
+#    1. Add a service block in docker/databases/docker-compose.yml
+#    2. Map its short name below (in the "short name -> service" section)
 #    3. Optionally add a cli-<name> client command
-#  That's it — the up/down/shell/cli targets work for it automatically.
+#  That's it - the up/down/shell/cli targets work for it automatically.
 # ─────────────────────────────────────────────────────────────────────
 
 PW      := root                                     # database password
-COMPOSE := docker compose -f database/docker-compose.yml
+COMPOSE := docker compose -f docker/databases/docker-compose.yml
 
-# short name → compose service
+# short name -> compose service
 ch := clickhouse
 my := mysql
 pg := postgres
 SERVICES := ch my pg
 
-# short name → interactive client (used by `make cli-<name>`)
+# short name -> interactive client (used by `make cli-<name>`)
 cli-ch := clickhouse-client --user default --password $(PW)
 cli-my := mysql -u root -p$(PW)
 cli-pg := psql -U postgres
@@ -45,7 +45,7 @@ endef
 .DEFAULT_GOAL := help
 .PHONY: help up down clean info
 
-# ── all services ─────────────────────────────────────────────────────
+# -- all services -----------------------------------------------------
 up:
 	$(call header,Starting all services 🚀)
 	@$(COMPOSE) up -d
@@ -61,7 +61,7 @@ clean:
 	@$(COMPOSE) down -v
 	$(call footer)
 
-# ── per-service (e.g. up-ch, down-my, shell-pg, cli-my) ──────────────
+# -- per-service (e.g. up-ch, down-my, shell-pg, cli-my) --------------
 up-%:
 	$(call header,Starting $(svc) 🚀)
 	@$(COMPOSE) up -d $(svc)
@@ -80,7 +80,7 @@ cli-%:
 	$(call header,Client → $(svc))
 	@$(COMPOSE) exec $(svc) $(cli-$*)
 
-# ── help & info ──────────────────────────────────────────────────────
+# -- help & info ------------------------------------------------------
 help:
 	$(call header,Docker Database Manager)
 	@printf "\n"
